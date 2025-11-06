@@ -30,18 +30,18 @@ const Skills: React.FC = () => {
   }, []);
 
   const skills = [
-    { name: "JavaScript", level: 95, color: "from-yellow-400 to-orange-500" },
-    { name: "TypeScript", level: 90, color: "from-blue-400 to-blue-600" },
-    { name: "React", level: 92, color: "from-cyan-400 to-blue-500" },
-    { name: "Node.js", level: 88, color: "from-green-400 to-green-600" },
-    { name: "Python", level: 85, color: "from-yellow-300 to-blue-500" },
-    { name: "C++", level: 78, color: "from-cyan-300 to-blue-400" },
-    { name: "Docker", level: 82, color: "from-blue-400 to-cyan-500" },
-    { name: "AWS", level: 80, color: "from-orange-400 to-yellow-500" },
-    { name: "PostgreSQL", level: 87, color: "from-blue-500 to-indigo-600" },
-    { name: "Redis", level: 75, color: "from-red-400 to-red-600" },
-    { name: "GraphQL", level: 83, color: "from-pink-400 to-purple-500" },
-    { name: "Three.js", level: 70, color: "from-purple-400 to-pink-500" },
+    { name: "JavaScript & TypeScript", level: 92 },
+    { name: "Node.js & Express", level: 88 },
+    { name: "React & Next.js", level: 86 },
+    { name: "C/C++ (Embedded & Robotics)", level: 91 },
+    { name: "Python, MicroPython & CircuitPython", level: 88 },
+    { name: "ROS2 & Robot Operating Systems", level: 84 },
+    { name: "Computer Vision (YOLOv8, OpenCV)", level: 83 },
+    { name: "TensorFlow & PyTorch", level: 80 },
+    { name: "MQTT & Realtime Networks", level: 87 },
+    { name: "SQL & NoSQL Databases", level: 83 },
+    { name: "DevOps & Docker", level: 75 },
+    { name: "Circuit & PCB Design", level: 70 },
   ];
 
   return (
@@ -49,26 +49,28 @@ const Skills: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
           <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Programming Languages
+            Core Skills
           </span>
         </h2>
 
         <p className="text-xl text-slate-300 text-center mb-16 max-w-3xl mx-auto">
-          Technologies I work with to bring ideas to life
+          Technologies and stacks I rely on to ship production-ready IoT, robotics, and software solutions
         </p>
 
         <div
           ref={skillsRef}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
-          {skills.map((skill, index) => (
-            <div
-              key={skill.name}
-              className="group bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10 cursor-pointer"
-            >
-              <div className="text-center">
-                <div className="relative w-20 h-20 mx-auto mb-4">
-                  <svg className="w-20 h-20 transform -rotate-90">
+          {skills.map((skill, index) => {
+            const gradientId = `skill-gradient-${index}`;
+            return (
+              <div
+                key={skill.name}
+                className="group bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10 cursor-pointer"
+              >
+                <div className="text-center">
+                  <div className="relative w-20 h-20 mx-auto mb-4">
+                    <svg className="w-20 h-20 transform -rotate-90">
                     <circle
                       cx="40"
                       cy="40"
@@ -82,7 +84,7 @@ const Skills: React.FC = () => {
                       cx="40"
                       cy="40"
                       r="36"
-                      stroke="url(#gradient)"
+                      stroke={`url(#${gradientId})`}
                       strokeWidth="8"
                       fill="none"
                       strokeDasharray={`${2 * Math.PI * 36}`}
@@ -92,24 +94,24 @@ const Skills: React.FC = () => {
                       className="transition-all duration-1000 ease-out"
                       strokeLinecap="round"
                     />
+                    <defs>
+                      <linearGradient
+                        id={gradientId}
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stopColor="#a855f7" />
+                        <stop offset="100%" stopColor="#ec4899" />
+                      </linearGradient>
+                    </defs>
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-sm font-bold text-white">
                       {skill.level}%
                     </span>
                   </div>
-                  <defs>
-                    <linearGradient
-                      id="gradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" className="text-purple-400" />
-                      <stop offset="100%" className="text-pink-400" />
-                    </linearGradient>
-                  </defs>
                 </div>
 
                 <h3 className="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors duration-300">
@@ -117,7 +119,8 @@ const Skills: React.FC = () => {
                 </h3>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

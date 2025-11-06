@@ -1,19 +1,26 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  Code, 
-  Database, 
-  Server, 
-  Cloud, 
-  Monitor, 
-  Zap, 
-  Shield, 
-  GitBranch,
+import {
+  Code,
+  Code2,
+  Server,
+  Cloud,
+  Monitor,
+  Zap,
+  Shield,
   Terminal,
   Layers,
   Box,
-  Cpu
+  Cpu,
+  Radio,
+  CircuitBoard,
+  Palette,
+  Smartphone,
+  Bot,
+  Brain,
+  Camera,
+  Sparkles,
 } from 'lucide-react';
 
 const Tools: React.FC = () => {
@@ -45,32 +52,127 @@ const Tools: React.FC = () => {
 
   const toolCategories = [
     {
-      title: 'Development',
+      title: "AI & Robotics",
       tools: [
-        { name: 'VS Code', icon: Code, description: 'Primary code editor with extensive customization' },
-        { name: 'Git', icon: GitBranch, description: 'Version control and collaboration' },
-        { name: 'Terminal', icon: Terminal, description: 'Command line interface and automation' },
-        { name: 'Postman', icon: Zap, description: 'API development and testing' }
-      ]
+        {
+          name: "ROS2, Gazebo & RViz",
+          icon: Bot,
+          description:
+            "Robot control, simulation, and visualization pipelines for autonomous systems",
+        },
+        {
+          name: "YOLOv8, OpenCV & DeepStream",
+          icon: Camera,
+          description:
+            "Real-time computer vision for detection, tracking, and spatial awareness",
+        },
+        {
+          name: "TensorFlow, PyTorch & ONNX",
+          icon: Brain,
+          description:
+            "Model training, optimization, and deployment to edge hardware",
+        },
+        {
+          name: "LLMs, LangChain & RAG",
+          icon: Sparkles,
+          description:
+            "Conversational interfaces and intelligent agents for robotics and IoT workflows",
+        },
+      ],
     },
     {
-      title: 'Infrastructure',
+      title: "IoT & Hardware",
       tools: [
-        { name: 'Docker', icon: Box, description: 'Containerization and deployment' },
-        { name: 'AWS', icon: Cloud, description: 'Cloud services and infrastructure' },
-        { name: 'Kubernetes', icon: Layers, description: 'Container orchestration' },
-        { name: 'Nginx', icon: Server, description: 'Web server and reverse proxy' }
-      ]
+        {
+          name: "Arduino IDE & PlatformIO",
+          icon: Cpu,
+          description:
+            "Firmware development and rapid prototyping for microcontroller projects",
+        },
+        {
+          name: "ESP32 / ESPHome",
+          icon: Radio,
+          description:
+            "Wireless connectivity, OTA updates, and sensor integrations for IoT nodes",
+        },
+        {
+          name: "Raspberry Pi & Linux",
+          icon: CircuitBoard,
+          description:
+            "Edge computing, gateways, and on-premise controllers for connected systems",
+        },
+        {
+          name: "KiCad & PCB Prototyping",
+          icon: Box,
+          description:
+            "Schematic design and custom PCB layouts tailored to hardware requirements",
+        },
+      ],
     },
     {
-      title: 'Database & Monitoring',
+      title: "Backend & Cloud",
       tools: [
-        { name: 'PostgreSQL', icon: Database, description: 'Primary relational database' },
-        { name: 'Redis', icon: Cpu, description: 'In-memory data structure store' },
-        { name: 'Grafana', icon: Monitor, description: 'Monitoring and observability' },
-        { name: 'Wireshark', icon: Shield, description: 'Network protocol analyzer' }
-      ]
-    }
+        {
+          name: "Node.js, Express & NestJS",
+          icon: Server,
+          description:
+            "Robust APIs, device management backends, and automation services",
+        },
+        {
+          name: "Laravel & PHP Ecosystem",
+          icon: Code2,
+          description:
+            "Modular backend services, REST APIs, and dashboard tooling when projects call for PHP",
+        },
+        {
+          name: "Python & FastAPI",
+          icon: Terminal,
+          description:
+            "Data pipelines, integrations, and IoT orchestration scripts",
+        },
+        {
+          name: "Firebase & Supabase",
+          icon: Cloud,
+          description:
+            "Realtime dashboards, authentication, and secure data storage",
+        },
+        {
+          name: "Docker & CI/CD",
+          icon: Layers,
+          description:
+            "Containerized deployments and repeatable release workflows",
+        },
+      ],
+    },
+    {
+      title: "Frontend & Apps",
+      tools: [
+        {
+          name: "React, Next.js & Vite",
+          icon: Code,
+          description:
+            "Fast web interfaces for monitoring, control, and client portals",
+        },
+        {
+          name: "React Native & Flutter",
+          icon: Smartphone,
+          description:
+            "Cross-platform mobile apps that interact with connected devices",
+        },
+        {
+          name: "Tailwind CSS & Shadcn UI",
+          icon: Palette,
+          description:
+            "Design systems that stay consistent across dashboards and apps",
+        },
+        {
+          name: "Electron & Tauri",
+          icon: Monitor,
+          description:
+            "Desktop tools for on-site configuration and hardware diagnostics",
+        },
+      ],
+    },
   ];
 
   return (
@@ -87,37 +189,40 @@ const Tools: React.FC = () => {
         </h2>
         
         <p className="text-xl text-slate-300 text-center mb-16 max-w-3xl mx-auto">
-          The arsenal of tools I use to build, deploy, and maintain applications
+          Tooling that lets me connect hardware in the field with reliable cloud services and polished interfaces.
         </p>
 
         <div ref={toolsRef} className="space-y-12">
-          {toolCategories.map((category, categoryIndex) => (
+          {toolCategories.map((category) => (
             <div key={category.title} className="space-y-6">
               <h3 className="text-2xl font-bold text-center text-green-400">
                 {category.title}
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {category.tools.map((tool, toolIndex) => (
-                  <div
-                    key={tool.name}
-                    className="group bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-green-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/10 cursor-pointer"
-                  >
-                    <div className="flex flex-col items-center text-center">
-                      <div className="bg-gradient-to-br from-green-500 to-blue-500 p-4 rounded-lg mb-4 group-hover:from-green-400 group-hover:to-blue-400 transition-all duration-300">
-                        <tool.icon size={32} className="text-white" />
+                {category.tools.map((tool) => {
+                  const Icon = tool.icon;
+                  return (
+                    <div
+                      key={tool.name}
+                      className="group bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-green-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/10 cursor-pointer"
+                    >
+                      <div className="flex flex-col items-center text-center">
+                        <div className="bg-gradient-to-br from-green-500 to-blue-500 p-4 rounded-lg mb-4 group-hover:from-green-400 group-hover:to-blue-400 transition-all duration-300">
+                          <Icon size={32} className="text-white" />
+                        </div>
+
+                        <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-green-400 transition-colors duration-300">
+                          {tool.name}
+                        </h4>
+
+                        <p className="text-sm text-slate-300 leading-relaxed">
+                          {tool.description}
+                        </p>
                       </div>
-                      
-                      <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-green-400 transition-colors duration-300">
-                        {tool.name}
-                      </h4>
-                      
-                      <p className="text-sm text-slate-300 leading-relaxed">
-                        {tool.description}
-                      </p>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}
@@ -132,27 +237,27 @@ const Tools: React.FC = () => {
               <div className="bg-gradient-to-br from-green-500 to-blue-500 p-3 rounded-lg mb-4 w-fit mx-auto">
                 <Code size={24} className="text-white" />
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Clean Code</h4>
+              <h4 className="text-lg font-semibold text-white mb-2">End-to-End Ownership</h4>
               <p className="text-slate-300 text-sm">
-                Writing maintainable, well-documented code that stands the test of time
+                Following every signal path from sensors to AI models to cloud endpoints to keep projects cohesive
               </p>
             </div>
             <div className="text-center">
               <div className="bg-gradient-to-br from-green-500 to-blue-500 p-3 rounded-lg mb-4 w-fit mx-auto">
                 <Zap size={24} className="text-white" />
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Performance</h4>
+              <h4 className="text-lg font-semibold text-white mb-2">Iterate Fast</h4>
               <p className="text-slate-300 text-sm">
-                Optimizing for speed, efficiency, and scalability in every project
+                Rapid prototypes, field feedback, and continuous improvements to reach reliable releases
               </p>
             </div>
             <div className="text-center">
               <div className="bg-gradient-to-br from-green-500 to-blue-500 p-3 rounded-lg mb-4 w-fit mx-auto">
                 <Shield size={24} className="text-white" />
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Security</h4>
+              <h4 className="text-lg font-semibold text-white mb-2">Reliability First</h4>
               <p className="text-slate-300 text-sm">
-                Building secure applications with proper authentication and data protection
+                Stress-testing hardware, firmware, and AI logic so deployments and robot missions stay resilient in the field
               </p>
             </div>
           </div>

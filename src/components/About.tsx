@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Code, Network, Zap, Users } from "lucide-react";
+import { Code, Network, Cpu, Wrench, Bot } from "lucide-react";
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -31,27 +31,34 @@ const About: React.FC = () => {
 
   const highlights = [
     {
-      icon: Code,
-      title: "Full Stack Development",
+      icon: Cpu,
+      title: "IoT Systems Integration",
       description:
-        "Building scalable web applications with modern technologies",
+        "Delivering end-to-end IoT solutions from device firmware to cloud dashboards",
+    },
+    {
+      icon: Bot,
+      title: "AI & Robotics",
+      description:
+        "Building ROS2-powered robots, computer vision pipelines, and intelligent edge devices",
+    },
+    {
+      icon: Wrench,
+      title: "Hardware Engineering",
+      description:
+        "Assembling, repairing, and optimizing hardware tailored for connected environments",
     },
     {
       icon: Network,
-      title: "Network Engineering",
+      title: "Network Architecture",
       description:
-        "Designing robust network infrastructures and security solutions",
+        "Designing resilient wired and wireless networks that keep devices online",
     },
     {
-      icon: Zap,
-      title: "Performance Optimization",
+      icon: Code,
+      title: "Full-Stack Development",
       description:
-        "Creating lightning-fast applications with optimal user experience",
-    },
-    {
-      icon: Users,
-      title: "Team Leadership",
-      description: "Leading development teams and mentoring junior developers",
+        "Building full-stack products across web, mobile, and desktop experiences",
     },
   ];
 
@@ -70,9 +77,11 @@ const About: React.FC = () => {
           </h2>
 
           <p className="text-xl text-slate-300 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate developer and network engineer with over 3 years of
-            experience creating innovative solutions that bridge the gap between
-            complex technical systems and intuitive user experiences.
+            I'm a builder at heart, trained in Computer & Network Engineering at
+            SMK and sharpened through countless hardware repairs, IoT deploys,
+            and custom software builds for clients who need everything to just
+            work. Today I continue my journey in a Computer Engineering degree
+            focused on AI and robotics experimentation.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -99,40 +108,47 @@ const About: React.FC = () => {
                   My Journey
                 </h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
-                  Started as a network engineer, I discovered my passion for web
-                  development when building internal tools to automate network
-                  monitoring. This led me to expand into full-stack development,
-                  combining my network expertise with modern web technologies.
+                  I started in vocational school mastering network topologies,
+                  cabling, and hardware diagnostics. Outside class, I took on
+                  repair jobs that taught me how devices behave in the real
+                  world and how to fix them fast.
                 </p>
                 <p className="text-slate-300 leading-relaxed">
-                  Today, I specialize in creating high-performance applications
-                  that not only look great but also handle complex backend
-                  operations with reliability and security.
+                  Those experiences naturally evolved into building IoT systems:
+                  configuring microcontrollers, stitching sensors to the cloud,
+                  and writing the web, mobile, or desktop software that keeps
+                  everything visible. In my Computer Engineering studies I dig
+                  into ROS2, computer vision, and machine learning so robotics
+                  projects can see, decide, and act autonomously. Today I combine
+                  hardware instincts with full-stack development to deliver
+                  dependable connected products, shipping web apps in React on
+                  the front and Laravel or Node.js on the backend depending on
+                  what each client needs.
                 </p>
               </div>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-300">Frontend Development</span>
+                  <span className="text-slate-300">IoT & Embedded</span>
                   <div className="w-32 bg-slate-700 rounded-full h-2">
                     <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full w-[90%]"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-300">Backend Development</span>
+                  <span className="text-slate-300">AI & Robotics</span>
                   <div className="w-32 bg-slate-700 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full w-[85%]"></div>
+                    <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full w-[88%]"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-300">Network Engineering</span>
+                  <span className="text-slate-300">Full-Stack Applications</span>
+                  <div className="w-32 bg-slate-700 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full w-[82%]"></div>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300">Network & Infrastructure</span>
                   <div className="w-32 bg-slate-700 rounded-full h-2">
                     <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full w-[95%]"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-300">DevOps & Cloud</span>
-                  <div className="w-32 bg-slate-700 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full w-[80%]"></div>
                   </div>
                 </div>
               </div>

@@ -69,10 +69,10 @@ const Hero: React.FC = () => {
           className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
         >
           <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
-            Full Stack
+            IoT & Full-Stack
           </span>
           <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Developer
+            Engineer
           </span>
         </h1>
 
@@ -80,8 +80,10 @@ const Hero: React.FC = () => {
           ref={subtitleRef}
           className="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          Passionate about creating innovative web applications and network
-          solutions that bridge technology with user experience.
+          From network-focused vocational training to hands-on hardware and
+          robotics builds, I craft IoT ecosystems, AI-driven robots, and
+          multi-platform apps that connect devices with outstanding user
+          experiences.
         </p>
 
         <div
