@@ -1,13 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   ExternalLink,
   Github,
-  Zap,
-  Database,
   Globe,
-  Shield,
 } from "lucide-react";
 
 const Projects: React.FC = () => {
@@ -39,48 +35,58 @@ const Projects: React.FC = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "LED-Predict – IoT LED Monitoring",
       description:
-        "Full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-      image:
-        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "I built both the hardware and software of an ESP32-based IoT system designed to monitor LED performance in real time using multiple sensors, with all data stored in Firebase and visualized through a responsive web dashboard.",
+      tech: [
+        "ESP32",
+        "C++ (Arduino)",
+        "Firebase Realtime Database",
+        "Javascript",
+        "React",
+        "TailwindCSS"
+      ],
+      image: "/ledpredict.png",
       features: [
-        "Real-time inventory",
-        "Payment processing",
-        "Admin dashboard",
-        "Mobile responsive",
+        "Real-time LED sensor monitoring",
+        "Multi-sensor data collection (lux, voltage, current, temp, humidity)",
+        "Direct Firebase data logging",
+        "Live web dashboard visualization",
+        "Automatic timestamp sync (NTP)",
+        "Device-based data separation"
       ],
       icon: Globe,
       gradient: "from-blue-500 to-purple-600",
+      liveUrl: "https://monitorledpredict.visilogi.com/",
+      codeUrl: ""
     },
-    // {
-    //   title: 'Network Monitoring System',
-    //   description: 'Advanced network monitoring solution with real-time alerts, performance analytics, and automated reporting.',
-    //   tech: ['Python', 'Go', 'InfluxDB', 'Grafana', 'Docker'],
-    //   image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800',
-    //   features: ['Real-time monitoring', 'Automated alerts', 'Performance analytics', 'Custom dashboards'],
-    //   icon: Shield,
-    //   gradient: 'from-green-500 to-teal-600'
-    // },
-    // {
-    //   title: 'Task Management App',
-    //   description: 'Collaborative task management application with real-time updates, team workspaces, and productivity analytics.',
-    //   tech: ['TypeScript', 'React', 'GraphQL', 'Redis', 'WebSockets'],
-    //   image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
-    //   features: ['Real-time collaboration', 'Team workspaces', 'Analytics', 'Mobile app'],
-    //   icon: Zap,
-    //   gradient: 'from-orange-500 to-red-600'
-    // },
-    // {
-    //   title: 'Data Analytics Platform',
-    //   description: 'Comprehensive data analytics platform with machine learning capabilities and interactive visualizations.',
-    //   tech: ['Python', 'React', 'TensorFlow', 'Apache Kafka', 'Elasticsearch'],
-    //   image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-    //   features: ['Machine learning', 'Real-time processing', 'Interactive charts', 'API integration'],
-    //   icon: Database,
-    //   gradient: 'from-purple-500 to-pink-600'
-    // }
+    {
+      title: "SmartAttendance – IoT RFID & Fingerprint",
+      description:
+        "I developed an ESP32-based IoT attendance system using RFID and fingerprint authentication, integrated with a Laravel backend for real-time logging, user management, and attendance reporting.",
+      tech: [
+        "ESP32",
+        "C++ (Arduino)",
+        "RFID RC522",
+        "Fingerprint Sensor",
+        "Laravel",
+        "MySQL",
+        "REST API"
+      ],
+      image: "/ledpredict.png",
+      features: [
+        "Real-time attendance logging",
+        "RFID & fingerprint dual authentication",
+        "Separate access for students, teachers, and admins",
+        "Laravel web dashboard with reports",
+        "Secure API communication",
+        "Automatic timestamp sync (NTP)"
+      ],
+      icon: Globe,
+      gradient: "from-green-500 to-blue-600",
+      liveUrl: "https://absensi.visilogi.com/",
+      codeUrl: ""
+    },
   ];
 
   return (
@@ -156,14 +162,24 @@ const Projects: React.FC = () => {
 
                 <div className="flex items-center justify-between">
                   <div className="flex space-x-3">
-                    <button className="flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 px-4 py-2 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 px-4 py-2 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105"
+                    >
                       <ExternalLink size={16} />
                       <span>Live Demo</span>
-                    </button>
-                    <button className="flex items-center space-x-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105">
+                    </a>
+                    <a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105"
+                    >
                       <Github size={16} />
                       <span>Code</span>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

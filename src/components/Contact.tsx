@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Mail, MapPin, Send, Github, Linkedin, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import emailjs from "emailjs-com";
@@ -299,12 +298,13 @@ const Contact: React.FC = () => {
               bring your ideas to life.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              {/* <button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105">
-                Schedule a Call
-              </button> */}
-              <button className="bg-slate-700 hover:bg-slate-600 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105">
+              <a
+                href="/CV Ikmal Al Ais.pdf"
+                download
+                className="inline-flex items-center justify-center bg-slate-700 hover:bg-slate-600 px-8 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105"
+              >
                 Download Resume
-              </button>
+              </a>
             </div>
           </div>
         </div>
