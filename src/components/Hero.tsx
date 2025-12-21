@@ -107,7 +107,7 @@ const Hero: React.FC = () => {
               <Github size={24} />
             </a>
             <a
-              href="https://www.linkedin.com/in/ikmal-al-ais-32a2432b7/"
+              href="https://www.linkedin.com/in/ikmal-al-ais/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-lg bg-slate-800 hover:bg-slate-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
